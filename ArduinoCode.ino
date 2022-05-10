@@ -8,22 +8,31 @@
 #define SonarRightTrig 7
 
 #define SonarFrontEcho 4
-#define SonarFrontTrig 3
+#define SonarFrontTrig 2
 
 // Motor Ports
-#define motorSpeedLeft A4
-#define motorSpeedRight A3
+//#define motorSpeedLeft A4
+//#define motorSpeedRight A3
 
-#define motorDirLeft 6
-#define motorDirRight 5
+//#define motorDirLeft 6
+//#define motorDirRight 5
 
 // Variables initialisation
 int SonarLeftVal = 0;
 int SonarRighttVal = 0;
 int SonarFrontVal = 0;
 
-int motorSpdL = 0;
-int motorSpdR = 0;
+//int motorSpdL = 0;
+//int motorSpdR = 0;
+
+// defining motor terminals
+int motRightIn1 = 10;
+int motRightIn2 = 9;
+int En1 = 11;
+
+int motLeftIn1 = 6;
+int motLeftIn2 = 5;
+int En2 = 3;
 
 int maxPing = 20;         // minimum distance between sensor and wall
 
