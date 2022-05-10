@@ -11,8 +11,8 @@
 #define SonarFrontTrig 3
 
 // Motor Ports
-#define motorSpeedLeft 10
-#define motorSpeedRight 11
+#define motorSpeedLeft A4
+#define motorSpeedRight A3
 
 #define motorDirLeft 6
 #define motorDirRight 5
@@ -26,4 +26,18 @@ int motorSpdL = 0;
 int motorSpdR = 0;
 
 int maxPing = 20;         // minimum distance between sensor and wall
+
+NewPing SonarLeft(SonarLeftTrig, SonarLeftEcho, maxPing);
+NewPing SonarRight(SonarRightTrig, SonarRightEcho, maxPing);
+NewPing SonarFront(SonarFrontTrig, SonarFrontEcho, maxPing);
+
+
+void Reset() {
+    digitalWrite(motorDirLeft, LOW);
+    digitalWrite(motorDidRight, LOW);
+    analogWrite(motorSpeedLeft, 0);
+    analogWrite(motorSpeedRight, 0);
+    delay(10);
+}
+
 
