@@ -40,4 +40,52 @@ void Reset() {
     delay(10);
 }
 
+void ReadSensor() {
+  delay(5);
+  
+  sonarLeftVal = SonarLeft.ping.cm();
+  if(sonarLeft.check_timer() == 0) sonarLeftVal = maxPing;
+  delay(5);
+
+  sonarRightVal = SonarRight.ping.cm();
+  if(sonarRight.check_timer() == 0) sonarRightVal = maxPing;
+  delay(5);
+
+  sonarFrontVal = SonarFront.ping.cm();
+  if(sonarFront.check_timer() == 0) sonarFrontVal = maxPing;
+  delay(5); 
+}
+
+void forward(){
+    digitalWrite(motRightIn1, HIGH);
+    digitalWrite(motRightIn2, LOW);
+    digitalWrite(motLeftIn1, LOW);
+    digitalWrite(motLeftIn2, HIGH);
+}
+
+void left(){
+    digitalWrite(motRightIn1, HIGH);
+    digitalWrite(motRightIn2, LOW);
+    digitalWrite(motLeftIn1, LOW);
+    digitalWrite(motLeftIn2, LOW);
+}
+
+void right(){
+    digitalWrite(motRightIn1, LOW);
+    digitalWrite(motRightIn2, LOW);
+    digitalWrite(motLeftIn1, LOW);
+    digitalWrite(motLeftIn2, HIGH);
+}
+
+void stop(){
+    digitalWrite(motRightIn1, LOW);
+    digitalWrite(motRightIn2, LOW);
+    digitalWrite(motLeftIn1, LOW);
+    digitalWrite(motLeftIn2, HIGH);
+    delay(1000);
+}
+
+void AvoidWalls(){
+  
+}
 
