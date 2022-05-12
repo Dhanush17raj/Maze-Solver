@@ -44,6 +44,10 @@ void loop(){
   pass;
 }
 
+void sonar(int sensor){
+  pass;
+}
+
 void forward(){
   digitalWrite(motor_lA,1);
   digitalWrite(motor_lB,0);
