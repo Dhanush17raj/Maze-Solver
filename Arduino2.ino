@@ -78,16 +78,14 @@ void loop(){
     Stop();
     delay(1000);
     right();
-    delay(400);
-    
+    delay(400); 
   }
 
   if(distance_front<=20 && distance_right<20){
     Stop();
     delay(1000);
     right();
-    delay(800);
-   
+    delay(800);  
   }
 }
 
@@ -110,8 +108,6 @@ void forward(){
   digitalWrite(motor_rB,0);
   delay(1000);
 }
-
-
 void right(){
   digitalWrite(motor_lA,1);
   digitalWrite(motor_lB,0);
@@ -119,8 +115,6 @@ void right(){
   digitalWrite(motor_rB,1);
  delay(10);
 }
-
-
 void left(){
   digitalWrite(motor_lA,0);
   digitalWrite(motor_lB,1);
@@ -128,9 +122,6 @@ void left(){
   digitalWrite(motor_rB,0);
   delay(10);
 }
-
-
-
 void Stop(){
   digitalWrite(motor_lA,0);
   digitalWrite(motor_lB,0);
