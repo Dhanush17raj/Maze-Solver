@@ -1,3 +1,5 @@
+#include <NewPing.h>
+
 int motor_lA = 9;
 int motor_lB = 10;
 int motor_enableA = 11;
