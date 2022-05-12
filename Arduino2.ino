@@ -1,3 +1,5 @@
+#include <NewPing.h>
+
 int motor_lA = 9;
 int motor_lB = 10;
 int motor_enableA = 11;
@@ -41,10 +43,55 @@ void setup() {
 }
 
 void loop(){
-  pass;
+  long distance_front, distance_right, distance_left;
+  
+  distance_front = sonar(trigger_front, echo_front);
+  distance_left = sonar(trigger_left, echo_left);
+  distance_right = sonar(trigger_right, echo_right);
+  
+  //Serial.print("front = ");
+  //Serial.println(distance_front);
+  //Serial.print("Left = ");
+  //Serial.println(distance_left);
+  //Serial.print("Right = ");
+  //Serial.println(distance_right);  
+  //delay(50);
+  
+  if (distance_front >20){
+    forward();
+    if(distance_left > 10&& distance_left<20){
+      forward();
+    }
+    if(distance_left >=20){
+       left();
+       delay(30);
+       forward();
+    }
+    if(distance_left<10 && distance_left>0){
+      right();
+      delay(30);
+      forward();
+    }
+ } 
+  
+  if(distance_front<=20&& distance_right > 20){
+    Stop();
+    delay(1000);
+    right();
+    delay(400);
+    
+  }
+
+  if(distance_front<=20 && distance_right<20){
+    Stop();
+    delay(1000);
+    right();
+    delay(800);
+   
+  }
 }
 
-void sonar(int trigger, int echo){
+long sonar(int trigger, int echo){
   long duration, distance;
   digitalWrite(trigger, LOW);
   delayMicroseconds(2);
@@ -53,7 +100,7 @@ void sonar(int trigger, int echo){
   digitalWrite(trigger, LOW);
   duration = pulseIn(echo, HIGH);
   distance = duration*0.034/2;
-  return(distance);
+  return distance;
 }
 
 void forward(){
