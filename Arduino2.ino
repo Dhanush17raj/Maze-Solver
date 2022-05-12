@@ -45,6 +45,7 @@ void loop(){
 }
 
 void sonar(int trigger, int echo){
+  long duration, distance;
   digitalWrite(trigger, LOW);
   delayMicroseconds(2);
   digitalWrite(trigger, HIGH);
