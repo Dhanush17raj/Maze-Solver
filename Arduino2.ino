@@ -39,3 +39,43 @@ void setup() {
   analogWrite(motor_enableB, 88);
 
 }
+
+void loop(){
+  pass;
+}
+
+void forward(){
+  digitalWrite(motor_lA,1);
+  digitalWrite(motor_lB,0);
+  digitalWrite(motor_rA,1);
+  digitalWrite(motor_rB,0);
+  delay(1000);
+}
+
+
+void right(){
+  digitalWrite(motor_lA,1);
+  digitalWrite(motor_lB,0);
+  digitalWrite(motor_rA,0);
+  digitalWrite(motor_rB,1);
+ delay(10);
+}
+
+
+void left(){
+  digitalWrite(motor_lA,0);
+  digitalWrite(motor_lB,1);
+  digitalWrite(motor_rA,1);
+  digitalWrite(motor_rB,0);
+  delay(10);
+}
+
+
+
+void Stop(){
+  digitalWrite(motor_lA,0);
+  digitalWrite(motor_lB,0);
+  digitalWrite(motor_rA,0);
+  digitalWrite(motor_rB,0);
+  delay(300);
+}
