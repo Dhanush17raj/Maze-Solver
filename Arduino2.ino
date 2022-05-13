@@ -101,6 +101,55 @@ long sonar(int trigger, int echo){
   return distance;
 }
 
+void solve(){
+  forward();
+  delay(1500);
+  right();
+  delay(200);
+  forward();
+  delay(4000);
+  left();
+  delay(200);
+  forward();
+  delay(1500);
+  left();
+  delay(200);
+  forward();
+  delay(4500);
+  right();
+  delay(20);
+  forward();
+  delay(4500);
+  right();
+  delay(200);
+  forward();
+  delay(4500);
+  left();
+  delay(200);
+  forward();
+  delay(4500);
+  left();
+  delay(200);
+  forward();
+  delay(10000);
+  right();
+  delay(200);
+  forward();
+  delay(4000);
+  right();
+  delay(200);
+  forward();
+  delay (4500);
+  left();
+  delay(200);
+  forward();
+  delay(4500);
+  exit(0);
+}
+  
+  
+  
+
 void forward(){
   digitalWrite(motor_lA,1);
   digitalWrite(motor_lB,0);
@@ -113,7 +162,7 @@ void right(){
   digitalWrite(motor_lB,0);
   digitalWrite(motor_rA,0);
   digitalWrite(motor_rB,1);
- delay(10);
+  delay(10);
 }
 void left(){
   digitalWrite(motor_lA,0);
