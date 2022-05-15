@@ -10,7 +10,7 @@ wn.setup(1300,700)
 
 class box(turtle.Turtle):               # defining a generalsed box class
     def __init__(self, c):
-        turtle.Turtle._init_(self)
+        turtle.Turtle.__init__(self)
         self.c = c
         self.shape("square")
         self.color(self.c)
