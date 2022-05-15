@@ -9,7 +9,7 @@ wn.title("A BFS Maze Solving Program")
 wn.setup(1300,700)
 
 class box(turtle.Turtle):               # defining a generalsed box class
-    def _init_(self, c):
+    def __init__(self, c):
         turtle.Turtle._init_(self)
         self.c = c
         self.shape("square")
