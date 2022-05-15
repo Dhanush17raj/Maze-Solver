@@ -2,7 +2,7 @@ import turtle                    # import turtle library
 import time
 import sys
 from collections import deque
-from mazetoimg import grid
+from imgtomaze import grid
 
 wn = turtle.Screen()               # define the turtle window
 wn.bgcolor("black")
